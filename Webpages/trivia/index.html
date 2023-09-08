@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                    <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                    <button id="incorrect">6 people per 1 sheep</button>
+                    <button id="incorrect">3 people per 1 sheep</button>
+                    <button id="correct">1 person per 1 sheep</button>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                 <h3>What game is World of Warcraft base off of?</h3>
+                 <input text="Warcraft">
+                 <button id="check">Check Answer</button>
+                 <p id = "feedback2"></p>
+                <hr>
+                <!-- TODO: Add free response question here -->
+            </div>
+
+        </div>
+    </body>
+    <script>
+        // TODO: Add code to check answers to questions
+        let body = document.querySelector('body');
+        var color = document.querySelectorAll('#incorrect');
+
+        for(var i = 0; i <color.length; i++){
+            color[i].addEventListener('click', function(){
+                this.style.backgroundColor = 'red';
+            });
+        }
+
+
+        document.querySelector('#correct').addEventListener('click', function(){
+            this.style.backgroundColor = 'green';
+        });
+
+
+
+        document.querySelector('#check').addEventListener('click', function(){
+            let input = document.querySelector('input');
+            if (input.value === 'Warcraft'){
+                input.style.backgroundColor = 'green';
+                document.querySelector('#feeback2').innerHTML = 'correct';
+            }
+            else{
+                input.style.backgroundColor = 'red';
+                document.querySelector('#feeback2').innerHTML = 'incorrect';
+            }
+        })
+
+
+
+
+
+    </script>
+</html>
